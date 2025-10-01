@@ -1,7 +1,9 @@
 CYBERSECURITY-APEX-TASK-1
 
 Deliverables & purpose
+
 📚 FOUNDATION/
+
 LAB SETUP AND TOOL VERIFICATION - Step‑by‑step lab setup documentation including:
 VirtualBox configuration and host-only network setup
 Kali Linux initial setup and demo commands
