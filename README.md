@@ -1,5 +1,4 @@
 
-
 # CYBERSECURITY-APEX-TASK-1
 # 🛡️ Cybersecurity Foundation & Environment Setup
 
@@ -12,11 +11,13 @@ Goal: build strong fundamentals in **cybersecurity, networking, cryptography**, 
 - [Objectives](#-objectives)  
 - [Steps Covered](#-steps-covered)  
 - [Deliverables & Directory Structure](#-deliverables--directory-structure)  
+- [SCREENSHOTS](#-screenshots)  
 - [Quick Verification (How to reproduce)](#-quick-verification-how-to-reproduce)  
 - [Checklist for Submission](#-checklist-for-submission)  
 - [Safety & Responsible Use](#-safety--responsible-use)  
 - [How I Submitted This Task](#-how-i-submitted-this-task)  
-- [Contact & License](#-contact--license)
+- [License](#-license)  
+- [Contact](#-contact)
 
 ---
 
@@ -49,27 +50,43 @@ CHEAT_SHEETS/
 ├─ Linux_CLI_CheatSheet.md
 └─ Tool_Commands_CheatSheet.md
 SCREENSHOTS/
-├─ Oracle VirtualBox Setup.png
+├─ Burpsuite Exceution.png
 ├─ Kali Linux Setup.jpg
-├─ Metasploitable 2 Setup.png
 ├─ Kali Linux nmap Result.jpg
+├─ Metasploitable 2 Setup.png
+├─ Oracle VirtualBox Setup.png
 └─ Wireshark Ping Execution.jpg
 VIDEO/
 └─ lab_setup_walkthrough.mp4
 README.md
+LICENSE
 
 ````
 
-**Key files**
-- `FOUNDATION/Lab_Setup_Report.md` — step‑by‑step setup with commands and screenshots.  
-- `CHEAT_SHEETS/Linux_CLI_CheatSheet.md` — quick CLI reference.  
-- `CHEAT_SHEETS/Tool_Commands_CheatSheet.md` — Nmap/Netcat/Wireshark/Burp commands.  
-- `SCREENSHOTS/` and `VIDEO/` — visual evidence used for submission.
+---
+
+## 🖼️ SCREENSHOTS
+All screenshots used in the Lab_Setup_Report (filenames as committed):
+
+- `SCREENSHOTS/Burpsuite Exceution.png`  
+- `SCREENSHOTS/Kali Linux Setup.jpg`  
+- `SCREENSHOTS/Kali Linux nmap Result.jpg`  
+- `SCREENSHOTS/Metasploitable 2 Setup.png`  
+- `SCREENSHOTS/Oracle VirtualBox Setup.png`  
+- `SCREENSHOTS/Wireshark Ping Execution.jpg`
+
+> Notes about recent commits (examples shown in your repo history):
+- `Rename Burpsuite Exceution.png to SCREENSHOTS/Burpsuite Exceution.png`  
+- `Rename Kali Linux Setup.jpg to SCREENSHOTS/Kali Linux Setup.jpg`  
+- `Rename Kali Linux nmap Result.jpg to SCREENSHOTS/Kali Linux nmap Result.jpg`  
+- `Rename Metasploitable 2 setup.png to SCREENSHOTS/Metasploitable 2 Setup.png`  
+- `Rename Oracle VirtualBox Setup.png to SCREENSHOTS/Oracle VirtualBox Setup.png`  
+- `Rename Wireshark Execution.jpg to SCREENSHOTS/Wireshark Ping Execution.jpg`
 
 ---
 
 ## ✅ Quick Verification (How to reproduce)
-> Use the Host‑Only network `192.168.56.0/24` (example). Replace IPs if you chose different ones.
+> Host-only subnet example used for the lab: `192.168.56.0/24`
 
 **Example static IP plan**
 - Host (VBox host-only): `192.168.56.1`  
@@ -91,12 +108,6 @@ sudo nmap -sS -Pn 192.168.56.102
 sudo tshark -i eth0 -c 50 -w /tmp/capture.pcap
 ````
 
-**Expected results**
-
-* `ping` replies from `192.168.56.102`.
-* `nmap` shows open services on the target (e.g., ports 22, 80, 445 etc. depending on the target image).
-* `capture.pcap` contains ICMP and TCP frames that can be opened in Wireshark.
-
 ---
 
 ## 📝 Checklist for Submission
@@ -117,7 +128,7 @@ sudo tshark -i eth0 -c 50 -w /tmp/capture.pcap
 This lab is for **educational, legal, and ethical** use only.
 **Do not** run attacks or scans against systems you do not own or have explicit permission to test. Use only your private VM lab or sanctioned targets.
 
-
+---
 
 ## 📤 How I Submitted This Task
 
@@ -126,5 +137,9 @@ This lab is for **educational, legal, and ethical** use only.
 3. Pushed all files to this public GitHub repo.
 4. Logged in to ApexPlanet → Manage Task → pasted LinkedIn video link & GitHub repo link → submitted.
 
+---
 
+## 📄 License
+
+This project is licensed under the MIT License — see the `LICENSE` file for details.
 
