@@ -17,7 +17,6 @@ Goal: build strong fundamentals in **cybersecurity, networking, cryptography**, 
 - [Safety & Responsible Use](#-safety--responsible-use)  
 - [How I Submitted This Task](#-how-i-submitted-this-task)  
 - [License](#-license)  
-- [Contact](#-contact)
 
 ---
 
