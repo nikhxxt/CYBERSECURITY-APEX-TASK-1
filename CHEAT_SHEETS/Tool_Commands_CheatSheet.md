@@ -1,3 +1,6 @@
+Tool Commands Cheat Sheet — Task 6 (Nmap, Netcat, Wireshark, Burp)
+
+
 | Tool   | Command            | Purpose                                                        | Example                   |
 |--------|--------------------|----------------------------------------------------------------|---------------------------|
 | Nmap   | `nmap [IP]`        | Basic scan: checks ≈1000 common TCP ports.                     | `nmap 192.168.56.101`     |
