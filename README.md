@@ -1,173 +1,169 @@
-# CYBERSECURITY-APEX-TASK-1
+# CYBERSECURITY-APEX-TASK-1 ⚡️
 
-# 🛡️ Cybersecurity — Foundation & Environment Setup
+## 🛡️ Cybersecurity — Foundation & Environment Setup
 
-This repository documents **Task‑1: Foundation & Environment Setup** — a step‑by‑step record of my cybersecurity learning and lab environment build.
+**Task‑1:** Step-by-step documentation of setting up a contained cybersecurity lab (Kali Linux attacker VM + vulnerable targets) to learn networking, enumeration, packet capture, and basic cryptography.
 
-**Goal:** build strong fundamentals in **cybersecurity, networking, and cryptography**, and set up a private Kali‑based hacking lab for safe, legal practice.
+**Goal:** Build practical skills with VirtualBox, Kali Linux, Metasploitable2/DVWA, and tools like `nmap`, `Wireshark`, `Burp Suite`. Includes reproducible steps, labeled screenshots, and a short walkthrough video.
+
+---
+
+## 🔖 Badges
+
+`[![License: MIT](https://img.shields.io/badge/License-MIT-green)]` `![Last commit](https://img.shields.io/github/last-commit/nikhxxt/CYBERSECURITY-APEX-TASK-1)`
 
 ---
 
 ## 📚 Table of Contents
 
-* [Objectives](#-objectives)
-* [What's Included](#-whats-included)
-* [Steps Covered](#-steps-covered)
-* [Deliverables & Directory Structure](#-deliverables--directory-structure)
-* [Quick Verification (How to reproduce)](#-quick-verification-how-to-reproduce)
-* [Commands & Examples](#-commands--examples)
-* [Key Learnings / Summary](#-key-learnings--summary)
-* [Checklist for Submission](#-checklist-for-submission)
-* [Safety & Responsible Use](#-safety--responsible-use)
-* [How I Submitted This Task](#-how-i-submitted-this-task)
-* [Screenshots & Video](#-screenshots--video)
-* [License](#-license)
+* [What’s Included](#whats-included)
+* [Quick Start — Reproduce the Lab](#quick-start---reproduce-the-lab)
+* [Folder Structure](#folder-structure)
+* [Commands & Verification Snippets](#commands--verification-snippets)
+* [Screenshots & Video References](#screenshots--video-references)
+* [Checklist Before Submission](#checklist-before-submission)
+* [Notes & Recommended Improvements](#notes--recommended-improvements)
+* [License & Contact](#license--contact)
 
 ---
 
-## 📌 Objectives
+## 📦 What’s Included
 
-* Build strong fundamentals in **cybersecurity and networking**.
-* Gain hands‑on experience with a private Kali Linux attacker VM and intentionally vulnerable targets (DVWA / Metasploitable2).
-* Become familiar with basic **Linux**, **cryptography**, and essential tools (Nmap, Wireshark, Burp Suite).
-* Learn safe, responsible lab practices for ethical security learning.
+### CHEAT_SHEETS
+
+* `Linux_CLI_CheatSheet.md`
+* `Tool_Commands_CheatSheet.md`
+
+### FOUNDATION
+
+* `Lab_Setup_and_Verification.md`
+* `Task3_Networking_Notes.md`
+* `Task4_Cryptography_Notes.md`
+
+### SCREENSHOTS
+
+* `Burpsuite Exceution.png` *(rename to `Burpsuite_Execution.png` for consistency)*
+* `Kali Linux Setup.jpg`
+* `Kali Linux nmap Result.jpg`
+* `Metasploitable 2 Setup.png`
+* `Oracle VirtualBox Setup.png`
+* `Wireshark Ping Execution.jpg`
+
+### VIDEO
+
+* `lab_setup_walkthrough.mp4` *(upload to LinkedIn for portfolio / submission)*
+
+### LICENSE
+
+* MIT License included
 
 ---
 
-## ⚡ Steps Covered
+## Quick Start — Reproduce the Lab
 
-1. **Cybersecurity Basics** — CIA Triad, threat types, common attack vectors.
-2. **Lab Environment Setup** — VirtualBox setup, Kali (attacker), Metasploitable2 / DVWA (targets), Host‑Only networking.
-3. **Linux Fundamentals** — shell navigation, file permissions, package management, basic networking commands.
-4. **Networking** — OSI/TCP‑IP model, DNS, HTTP/HTTPS, IP addressing & subnetting.
-5. **Cryptography** — symmetric vs asymmetric cryptography, hashing, SSL/TLS basics, OpenSSL examples.
-6. **Tools** — practical hands‑on with Wireshark, Nmap, Burp Suite, Netcat, and Tshark.
-
----
-
-## 🔧 Deliverables & Directory Structure
-
-```
-CYBERSECURITY-APEX-TASK-1/
-├─ CHEAT_SHEETS/
-│  ├─ Linux_CLI_CheatSheet.md
-│  └─ Tool_Commands_CheatSheet.md
-├─ FOUNDATION/
-│  ├─ LAB_SETUP_AND_TOOL_VERIFICATION.md
-│  ├─ Task3_Networking_Notes.md
-│  └─ Task4_Cryptography_Notes.md
-├─ SCREENSHOTS/
-│  ├─ BurpSuite_Execution.png
-│  ├─ Kali_Linux_Setup.jpg
-│  ├─ Kali_Linux_Nmap_Result.jpg
-│  ├─ Metasploitable2_Setup.png
-│  ├─ Oracle_VirtualBox_Setup.png
-│  └─ Wireshark_Ping_Execution.jpg
-├─ VIDEO/
-│  └─ lab_setup_walkthrough.mp4
-├─ LICENSE
-└─ README.md
-```
-
-## ✅ Quick Verification (How to reproduce)
-
-> Host‑only subnet example used for the lab: `192.168.56.0/24`
-
-**Example static IP plan**
-
-* Host (VBox host‑only): `192.168.56.1`
-* Kali (attacker): `192.168.56.101`
-* Metasploitable (target): `192.168.56.102`
-
-**Basic verification commands (run on Kali)**
+1. **Clone the repository**
 
 ```bash
-# show interface and IP
+git clone https://github.com/nikhxxt/CYBERSECURITY-APEX-TASK-1.git
+cd CYBERSECURITY-APEX-TASK-1
+```
+
+2. **Download required images**
+
+* Kali Linux ISO
+* Metasploitable2 OVA
+
+3. **Create VirtualBox VMs**
+
+* Host‑Only network: `192.168.56.0/24`
+* Import Metasploitable2 OVA
+* Create Kali VM with ISO attached
+
+4. **Start VMs and verify connectivity**
+
+```bash
+# On Kali
 ip a
+ping -c 3 192.168.56.102   # replace with target IP
 
-# ping the target
-ping -c 4 192.168.56.102
-
-# basic TCP SYN nmap scan (requires sudo)
+# Quick nmap scan
 sudo nmap -sS -Pn 192.168.56.102
-
-# capture a small packet trace (tshark) - CLI
-sudo tshark -i eth0 -c 50 -w /tmp/capture.pcap
 ```
 
 ---
 
-## 🧰 Commands & Examples (short cheatsheet)
+## Commands & Verification Snippets
 
-* `sudo apt update && sudo apt upgrade -y` — update Kali packages.
-* `sudo apt install nmap wireshark tshark -y` — install common tools.
-* `nmap -sS -Pn <target-ip>` — stealth SYN scan (use responsibly).
-* `tshark -i eth0 -c 100 -w capture.pcap` — capture 100 packets to a pcap file.
-* `curl -I http://<target-ip>` — check HTTP headers.
+### System Update & Tool Installation
 
----
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y nmap wireshark tshark burpsuite
+```
 
-## 📝 Key Learnings / Summary
+### Networking Verification
 
-* Gained hands‑on experience setting up a contained penetration‑testing lab using VirtualBox host‑only networking.
-* Practiced network discovery and basic service enumeration with Nmap.
-* Collected and analyzed packet captures with Tshark/Wireshark to understand network behavior.
-* Reviewed fundamental cryptography concepts and practiced with OpenSSL for basic certificate and hashing exercises.
-* Reinforced the importance of responsible and ethical practices when experimenting with security tools.
+```bash
+ip a        # check interfaces and IPs
+ip route    # routing table
+ping -c 4 192.168.56.102  # test connectivity
+```
 
----
+### Nmap Scans
 
-## 📝 Checklist for Submission
+```bash
+# Top 100 ports
+nmap -T4 --top-ports 100 192.168.56.102
 
-* [ ] `Lab_Setup_Report.md` with inline screenshots.
-* [ ] `CHEAT_SHEETS/Linux_CLI_CheatSheet.md` added.
-* [ ] `CHEAT_SHEETS/Tool_Commands_CheatSheet.md` added.
-* [ ] `SCREENSHOTS/` contains the listed images with correct filenames.
-* [ ] `VIDEO/lab_setup_walkthrough.mp4` recorded and uploaded.
-* [ ] README includes verification steps and IP plan.
-* [ ] Linked video added to LinkedIn Featured and link included in ApexPlanet submission.
-* [ ] Public GitHub repo link copied to ApexPlanet task entry.
+# Full port scan with service/version detection
+sudo nmap -sS -sV -p- 192.168.56.102
+```
 
----
+### Packet Capture with Tshark
 
-## ⚠️ Safety & Responsible Use
-
-This lab is for **educational, legal, and ethical** use only.
-
-* **Do not** run attacks, scans, or exploit code against systems you do not own or do not have explicit permission to test.
-* **Isolate your lab**: keep the attacker and target VMs in a host‑only or NAT network that is not bridged to your production or home network.
-* Avoid connecting intentionally vulnerable VMs to the Internet.
-* Keep snapshots of your VMs before major changes so you can quickly restore a clean state.
+```bash
+sudo tshark -i eth0 -c 100 -w /tmp/capture.pcap
+```
 
 ---
 
-## 📤 How I Submitted This Task
+## Screenshots & Video References
 
-1. Recorded a walkthrough: `VIDEO/lab_setup_walkthrough.mp4`.
-2. Uploaded the walkthrough video to LinkedIn (Added it under *Featured*).
-3. Pushed all files to this public GitHub repo.
-4. Logged into ApexPlanet → Manage Task → pasted LinkedIn video link & GitHub repo link → submitted.
+| Screenshot                   | Description                  |
+| ---------------------------- | ---------------------------- |
+| Oracle VirtualBox Setup.png  | VM creation & network setup  |
+| Kali Linux Setup.jpg         | Kali installation screenshot |
+| Metasploitable 2 Setup.png   | Target VM boot & login       |
+| Kali Linux nmap Result.jpg   | Sample nmap scan results     |
+| Wireshark Ping Execution.jpg | ICMP capture example         |
+| Burpsuite Exceution.png      | Burp Suite intercept demo    |
 
----
-
-## 🖼️ Screenshots & Video
-
-All screenshots used in the `LAB SETUP AND TOOL VERIFICATION.md` (filenames as committed):
-
-* `SCREENSHOTS/Burpsuite Exceution.png`
-* `SCREENSHOTS/Kali Linux Setup.jpg`
-* `SCREENSHOTS/Kali Linux nmap Result.jpg`
-* `SCREENSHOTS/Metasploitable 2 Setup.png`
-* `SCREENSHOTS/Oracle VirtualBox Setup.png`
-* `SCREENSHOTS/Wireshark Ping Execution.jpg`
-
-**Video (LinkedIn)**
-
-* LinkedIn walkthrough: [https://www.linkedin.com/posts/nikhat-naaz-malki-shaik-8240aa31a_cybersecurity-internship-ethicalhacking-activity-7379474614701228033-ja0Z](https://www.linkedin.com/posts/nikhat-naaz-malki-shaik-8240aa31a_cybersecurity-internship-ethicalhacking-activity-7379474614701228033-ja0Z)
+**LinkedIn walkthrough:** (https://www.linkedin.com/posts/nikhat-naaz-malki-shaik-8240aa31a_cybersecurity-internship-ethicalhacking-activity-7379474614701228033-ja0Z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFDQ0hwBssVRSllABDcGpxoifixeymEi_nY)
 
 ---
 
-## 📄 License
+## Checklist Before Submission
 
-This project is licensed under the MIT License — see the `LICENSE` file for details.
+* [ ] `Lab_Setup_and_Verification.md` includes all commands & expected outputs
+* [ ] Screenshots are present & referenced
+* [ ] Cheat sheets contain copyable commands
+* [ ] Walkthrough video uploaded to LinkedIn Featured
+* [ ] MIT License included
+* [ ] README includes TOC, commands, and verification steps
+
+---
+
+## Notes & Recommended Improvements
+
+* Rename `Burpsuite Exceution.png` → `Burpsuite_Execution.png`
+* Convert walkthrough video into 20–30s GIF highlights for quick viewing
+* Add `CONTRIBUTING.md` & `Known Issues` section
+* Add GitHub badges (license, last commit, repo size) for a polished look
+
+---
+
+## License & Contact
+
+This project is licensed under the **MIT License** — see `LICENSE`.
+Repo: [https://github.com/nikhxxt/CYBERSECURITY-APEX-TASK-1](https://github.com/nikhxxt/CYBERSECURITY-APEX-TASK-1)
 
