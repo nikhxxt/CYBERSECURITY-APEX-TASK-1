@@ -48,25 +48,26 @@ This repository documents **Task‑1: Foundation & Environment Setup** — a ste
 ## 🔧 Deliverables & Directory Structure
 
 ```
-FOUNDATION/
-├─ Lab_Setup_Report.md
-├─ Task3_Networking_Notes.md
-└─ Task4_Cryptography_Notes.md
-CHEAT_SHEETS/
-├─ Linux_CLI_CheatSheet.md
-└─ Tool_Commands_CheatSheet.md
-SCREENSHOTS/
-├─ Burpsuite Execution.png
-├─ Kali Linux Setup.jpg
-├─ Kali Linux Nmap Result.jpg
-├─ Metasploitable 2 Setup.png
-├─ Oracle VirtualBox Setup.png
-└─ Wireshark Ping Execution.jpg
-VIDEO/
-└─ lab_setup_walkthrough.mp4
-README.md
+CHEAT_SHEETS
+Linux_CLI_CheatSheet.md
+Tool_Commands_CheatSheet.md
+FOUNDATION
+LAB SETUP AND TOOL VERIFICATION.md
+Task3_Networking_Notes.md
+Task4_Cryptography_Notes.md
+SCREENSHOTS
+Burpsuite Exceution.png
+Kali Linux Setup.jpg
+Kali Linux nmap Result.jpg
+Metasploitable 2 Setup.png
+Oracle VirtualBox Setup.png
+Wireshark Ping Execution.jpg
+VIDEO
+lab_setup_walkthrough.mp4
 LICENSE
+README.md
 ```
+
 ---
 
 ## ✅ Quick Verification (How to reproduce)
@@ -152,11 +153,11 @@ This lab is for **educational, legal, and ethical** use only.
 
 ## 🖼️ Screenshots & Video
 
-All screenshots used in the `Lab_Setup_Report.md` (filenames as committed):
+All screenshots used in the `LAB SETUP AND TOOL VERIFICATION.md` (filenames as committed):
 
-* `SCREENSHOTS/Burpsuite Execution.png`
+* `SCREENSHOTS/Burpsuite Exceution.png`
 * `SCREENSHOTS/Kali Linux Setup.jpg`
-* `SCREENSHOTS/Kali Linux Nmap Result.jpg`
+* `SCREENSHOTS/Kali Linux nmap Result.jpg`
 * `SCREENSHOTS/Metasploitable 2 Setup.png`
 * `SCREENSHOTS/Oracle VirtualBox Setup.png`
 * `SCREENSHOTS/Wireshark Ping Execution.jpg`
@@ -170,6 +171,4 @@ All screenshots used in the `Lab_Setup_Report.md` (filenames as committed):
 ## 📄 License
 
 This project is licensed under the MIT License — see the `LICENSE` file for details.
-
----
 
