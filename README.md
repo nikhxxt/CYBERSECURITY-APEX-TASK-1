@@ -67,9 +67,6 @@ VIDEO/
 README.md
 LICENSE
 ```
-
-> Note: filenames must match exactly (case sensitive on some systems). I standardized `Burpsuite Execution.png` and `Kali Linux Nmap Result.jpg` in the list above.
-
 ---
 
 ## ✅ Quick Verification (How to reproduce)
