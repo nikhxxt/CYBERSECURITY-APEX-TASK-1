@@ -42,7 +42,7 @@
 
 ### SCREENSHOTS
 
-* `Burpsuite Exceution.png` *(rename to `Burpsuite_Execution.png` for consistency)*
+* `Burpsuite Exceution.png` 
 * `Kali Linux Setup.jpg`
 * `Kali Linux nmap Result.jpg`
 * `Metasploitable 2 Setup.png`
