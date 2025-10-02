@@ -131,7 +131,7 @@ This lab is for **educational, legal, and ethical** use only.
 
 ## 📤 How I Submitted This Task
 
-1. Recorded a 5‑minute walkthrough: `VIDEO/lab_setup_walkthrough.mp4`.
+1. Recorded a walkthrough: `VIDEO/lab_setup_walkthrough.mp4`.
 2. Uploaded video to LinkedIn (added under *Featured*) and copied the share link.
 3. Pushed all files to this public GitHub repo.
 4. Logged in to ApexPlanet → Manage Task → pasted LinkedIn video link & GitHub repo link → submitted.
