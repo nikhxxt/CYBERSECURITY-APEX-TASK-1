@@ -51,7 +51,7 @@
 
 ### VIDEO
 
-* `lab_setup_walkthrough.mp4` *(upload to LinkedIn for portfolio / submission)*
+* `lab_setup_walkthrough.mp4` 
 
 ### LICENSE
 
