@@ -109,7 +109,7 @@ sudo apt install -y nmap wireshark tshark burpsuite
 ```bash
 ip a        # check interfaces and IPs
 ip route    # routing table
-ping -c 4 192.168.56.102  # test connectivity
+ping -c 4 192.168.56.102  # test connectivity (replace with your target IP)
 ```
 
 ### Nmap Scans
@@ -125,8 +125,25 @@ sudo nmap -sS -sV -p- 192.168.56.102
 ### Packet Capture with Tshark
 
 ```bash
+# Replace `eth0` with your Kali VM's network interface (use `ip a` to find the correct name)
 sudo tshark -i eth0 -c 100 -w /tmp/capture.pcap
 ```
+
+### Notes on interfaces & permissions
+
+* Network interface names may vary (common examples: `eth0`, `ens33`, `enp0s3`, `eth1`). Run `ip a` to find the correct interface.
+* For Wireshark/tshark packet captures you may need root privileges or to add your user to the `wireshark` group:
+
+```bash
+# run Wireshark as root (not recommended for long-term use)
+sudo wireshark
+
+# OR (recommended) add user to wireshark group and re-login
+sudo usermod -aG wireshark $USER
+```
+
+* If `tshark` or `wireshark` cannot see interfaces, check VirtualBox network settings (Host‑Only adapter vs NAT) and ensure VMs are on the same subnet.
+
 
 ---
 
