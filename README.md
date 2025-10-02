@@ -143,4 +143,5 @@ This lab is for **educational, legal, and ethical** use only.
 This project is licensed under the MIT License — see the `LICENSE` file for details.
 
 ## 🎥 VIDEO
+https://www.linkedin.com/posts/nikhat-naaz-malki-shaik-8240aa31a_cybersecurity-internship-ethicalhacking-activity-7379474614701228033-ja0Z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFDQ0hwBssVRSllABDcGpxoifixeymEi_nY
 
