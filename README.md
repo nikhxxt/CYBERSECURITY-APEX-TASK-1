@@ -153,15 +153,6 @@ sudo tshark -i eth0 -c 100 -w /tmp/capture.pcap
 
 ---
 
-## Notes & Recommended Improvements
-
-* Rename `Burpsuite Exceution.png` → `Burpsuite_Execution.png`
-* Convert walkthrough video into 20–30s GIF highlights for quick viewing
-* Add `CONTRIBUTING.md` & `Known Issues` section
-* Add GitHub badges (license, last commit, repo size) for a polished look
-
----
-
 ## License & Contact
 
 This project is licensed under the **MIT License** — see `LICENSE`.
