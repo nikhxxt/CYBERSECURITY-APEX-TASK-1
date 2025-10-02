@@ -69,63 +69,6 @@ CYBERSECURITY-APEX-TASK-1/
 └─ README.md
 ```
 
-Notes on naming conventions used above
-
-* Use `Pascal_Case` (or `Title_Case`) for filenames with underscores between words — this avoids spaces and keeps names readable.
-* Fix the typo `Exceution` → `Execution`.
-* Make `LAB_SETUP_AND_TOOL_VERIFICATION.md` all-caps with underscores so it’s consistent and easy to reference.
-* `Metasploitable2` without a space is common; either `Metasploitable_2` or `Metasploitable2` — chosen `Metasploitable2_Setup.png`.
-
-Run these commands (from your repo root) to rename files to the standardized names and commit the change:
-
-```bash
-# 1) Rename files (adjust only if paths differ)
-git mv "SCREENSHOTS/Burpsuite Exceution.png" "SCREENSHOTS/BurpSuite_Execution.png"
-git mv "SCREENSHOTS/Kali Linux Setup.jpg" "SCREENSHOTS/Kali_Linux_Setup.jpg"
-git mv "SCREENSHOTS/Kali Linux nmap Result.jpg" "SCREENSHOTS/Kali_Linux_Nmap_Result.jpg"
-git mv "SCREENSHOTS/Metasploitable 2 Setup.png" "SCREENSHOTS/Metasploitable2_Setup.png"
-git mv "SCREENSHOTS/Oracle VirtualBox Setup.png" "SCREENSHOTS/Oracle_VirtualBox_Setup.png"
-git mv "SCREENSHOTS/Wireshark Ping Execution.jpg" "SCREENSHOTS/Wireshark_Ping_Execution.jpg"
-
-git mv "FOUNDATION/LAB SETUP AND TOOL VERIFICATION.md" "FOUNDATION/LAB_SETUP_AND_TOOL_VERIFICATION.md"
-
-# 2) Add any new/renamed files to git index and remove old names (git mv already does this)
-git add -A
-
-# 3) Commit
-git commit -m "Standardize filenames and fix typos: screenshots + lab report"
-
-# 4) Push to origin (assuming branch is main)
-git push origin main
-```
-
-Optional: Create a `.gitignore` (recommended content)
-
-```
-# macOS
-.DS_Store
-
-# Logs
-*.log
-
-# Packet captures or large binaries you don't want in repo
-*.pcap
-*.mp4      # if you prefer hosting video elsewhere; keep only if you want video in repo
-
-# Python / node envs if any
-venv/
-node_modules/
-
-# Temporary files
-*.tmp
-```
-
-Create it wit
-
-```
-
----
-
 ## ✅ Quick Verification (How to reproduce)
 
 > Host‑only subnet example used for the lab: `192.168.56.0/24`
