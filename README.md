@@ -10,7 +10,6 @@
 
 ## 🔖 Badges
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-![Last commit](https://img.shields.io/github/last-commit/nikhxxt/CYBERSECURITY-APEX-TASK-1)
 ![Repo size](https://img.shields.io/github/repo-size/nikhxxt/CYBERSECURITY-APEX-TASK-1)
 ![GitHub stars](https://img.shields.io/github/stars/nikhxxt/CYBERSECURITY-APEX-TASK-1?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/nikhxxt/CYBERSECURITY-APEX-TASK-1?style=social)
